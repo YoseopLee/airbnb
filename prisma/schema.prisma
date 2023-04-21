@@ -16,10 +16,10 @@ model User {
   email String? @unique
   emailVerified DateTime?
   image String?
-  hashedPassword String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  favoriteIds String[] @db.ObjectId
+  // hashedPassword String?
+  // createdAt DateTime @default(now())
+  // updatedAt DateTime @updatedAt
+  // favoriteIds String[] @db.ObjectId
 
   accounts Account[]
   listings Listing[]
@@ -70,7 +70,6 @@ model Reservation {
   startDate DateTime
   endDate DateTime
   totalPrice Int
-  createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
